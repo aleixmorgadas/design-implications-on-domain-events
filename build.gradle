@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+    id 'io.franzbecker.gradle-lombok' version '5.0.0' apply false
+}
+
+group 'dev.aleixmorgadas'
+version '1.0.0'
+
+subprojects {
+    repositories {
+        mavenCentral()
+    }
+
+    apply plugin: 'java'
+    apply plugin: 'io.franzbecker.gradle-lombok'
+
+    lombok {
+        version = '1.18.22'
+    }
+
+    dependencies {
+        testImplementation 'org.assertj:assertj-core:3.24.1'
+        testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+        testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+}
