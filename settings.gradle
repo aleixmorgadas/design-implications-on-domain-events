@@ -1,0 +1,4 @@
+rootProject.name = 'design-implications-on-domain-events'
+include 'domain-service-level'
+include 'commons'
+
